@@ -1,31 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Arle Arcade</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arle interactive arcade games</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <nav class="menu">
-        <ul>
-            <li><a href="catalogo.html">Catálogo</a></li>
-            <li><a href="perfil.html">Perfil</a></li>
-            <li><a href="configuracion.html">Configuración</a></li>
-            <li><a href="soporte.html">Soporte</a></li>
-        </ul>
-    </nav>
-    <div class="contenedor">
-        <div class="contenido-izquierda">
-            <p>Explora una gran variedad de juegos en nuestro amplio catálogo. ¡Nuestros juegos son ideales para darte una experiencia emocionante!</p>
+
+    <header>
+        <h2 class="logo">AIAG</h2>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+            <button class="btnLogin-popup">Login</button>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <span class="icon-close">
+            <ion-icon name="close"></ion-icon>
+        </span>
+
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
         </div>
-        <div class="contenido-derecha">
-            <h1>Arle Arcade</h1>
-            <h2>Tu centro de videojuegos favorito.</h2>
-            <button>Compra ahora</button>
+
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> I agree to the terms & conditions</label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
         </div>
     </div>
+
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const wrapper = document.querySelector('.wrapper');
+            const loginLink = document.querySelector('.login-link');
+            const registerLink = document.querySelector('.register-link');
+            const btnPopup = document.querySelector('.btnLogin-popup');
+            const iconClose = document.querySelector('.icon-close');
+
+            registerLink.addEventListener('click', ()=> {
+                wrapper.classList.add('active');
+            });
+
+            loginLink.addEventListener('click', ()=> {
+                wrapper.classList.remove('active');
+            });
+
+            btnPopup.addEventListener('click', ()=> {
+                wrapper.classList.add('active-popup');
+            });
+
+            iconClose.addEventListener('click', ()=> {
+                wrapper.classList.remove('active-popup');
+                wrapper.classList.remove('active');
+            });
+        });
+    </script>
+
 </body>
+
 </html>
-
-
-
 
